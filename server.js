@@ -4,14 +4,14 @@ var Controller = require('./server/controller');
 var MongoClient = require('mongodb').MongoClient;
 
 MongoClient.connect('mongodb://127.0.0.1:'+ config.dbport +'/' + config.dbname, function(err, db){
-	initSuper();
+	initSuper(db);
 	
 	http.createServer(function(request, response){
 		new Controller(request, response, db);
 	}).listen(3000);
 });
 
-function initSuper() {
+function initSuper(db) {
 	db.collection('users').count({ role: 'super' }, function(err, count){
 		if (count == 0) {
 			db.collection('users').insert({
