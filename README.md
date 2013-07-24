@@ -1,4 +1,4 @@
 tinsho-nodejs
 =============
 
-tinsho.com
+tinsho.com (no support for IE < 9)
