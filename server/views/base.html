@@ -1,0 +1,72 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>tinsho</title>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+	<link rel="stylesheet" href="/styles/main.css" />
+    <script src="/app.js"></script>
+</head>
+<body>
+<div id="container" class="container">
+    <div id="sidebar" class="sidebar">
+        <a href="/" id="logo" class="logo">听说</a>
+
+        <button type="button" class="aboutBtn" >关于</button>
+        <button type="button" class="mobileBtn">Mobile</button>
+    </div>
+
+    <div class="main"></div>
+</div>
+
+<script type="text/template" id="quotePageTpl">
+<div id="quotePage" class="quotePage page">
+    <div class="wrap">
+        <div id="quote" class="quote">
+            <div id="quoteContent" class="quoteContent">some content</div>
+            <div class="author">
+                —— <span id="quoteAuthor">some author</span>
+                <button type="button" title="分享到微博" btntype="share" class="shareBtn btn"></button>
+            </div>
+        </div>
+        <button type="button" class="hearBtn" >听</button>
+    </div>
+</div>  
+</script>
+
+<script type="text/template" id="aboutPageTpl">
+<div id="aboutPage" class="aboutPage page">
+    <div class="wrap">
+        <div class="intro">
+            <div class="content">
+            “ 我曾经听人说过，当你不能够再拥有的时候。你唯一可以做的，就是令自己不要忘记。” 
+            </div>
+            <div class="author">—— 《 东邪西毒 》</div> 
+        </div>
+        <div>
+            <h2>关于听说</h2>
+            <p>
+            这个世界存在着大量的文字，在互联网普及的现在，这些文字充斥着我们的生活，仿佛唾手可得。人们渴望从这些文字中获取价值，但最终确似乎什么也没得到，只剩下一阵阵的喧嚣，而人也变得越来越浅薄。或许在这个浮躁的社会，有些文字需要你静下心来品味。
+            </p>
+            <p>
+            “听说”旨在帮助人们好好感受这个世界有价值的文字，认真对待当下正在聆听或者阅读的东西，这可以是一句歌词，一段台词或者是某个文章，书籍中的章节。当你好好感受这些文字的时候，得到的也许就不是喧嚣，而是内心的一份平静。
+            </p>
+            <h2>关于未来</h2>
+            <p>“听说”是使用最新的互联网技术实现的一个网站，所以必然会存在许多问题需要修复，同时未来依然会有一些功能需要进一步完善。</p>
+            <p>但由于本人精力及能力有限，这将会是一个漫长的过程，不过如果您有好的建议或意见，时刻欢迎您通过邮件<a href="mailto:ichenkun@gmail.com" class="email-icon">ichenkun@gmail.com</a>与我联系。</p>
+        </div>
+        <button type="button" class="backBtn" >←返回</button>
+    </div>
+</div>
+</script>
+
+<script type="text/template" id="mobilePageTpl">
+<div id="mobilePage" class="mobilePage page" >
+    <div class="wrap">
+        <span class="tips">coming soon</span>
+        <button type="button" class="backBtn" >←返回</button>
+    </div>
+</div>
+</script>
+</body>
+</html>
