@@ -1,4 +1,5 @@
 var qs = require('querystring');
+var crypto = require('crypto');
 
 function fetchPost(callback) {
 	var bodyData = '';
@@ -23,7 +24,9 @@ var Router = {
 
 	login: function(){
 		fetchPost.call(this, function(body){
-			this.db.collection('users').findOne({ username: body.username, password: body.password }, function(err, account){
+			var shaSum = crypto.createHash('sha256');
+			shaSum.update(body.password.trim()); 
+			this.db.collection('users').findOne({ username: body.username.trim(), password: shaSum.digest('hex') }, function(err, account){
 				this.response.statusCode = 200; 
 				this.response.setHeader('Content-Type', 'text/plain');
 				if (account) {
