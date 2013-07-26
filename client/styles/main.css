@@ -11,6 +11,7 @@ header,footer,article,aside,nav,section,figure,figcaption { display:block;margin
 
 html,body { width:100%;height:100%; }
 body { background:url(../images/bg.jpg) repeat center center;font-size:12px;font-family:Helvetica,Arial,sans-serif; }
+#loader { padding-left:20px;width:740px;height:90%;position:absolute;top:5%;left:200px;background:url(../images/loader.gif) no-repeat 50% 40%; }
 
 .container { position:relative;width:960px;height:100%;margin:auto;overflow:hidden; }
 .sidebar { width:200px;height:90%;position:absolute;top:5%;left:0; }
@@ -21,10 +22,14 @@ body { background:url(../images/bg.jpg) repeat center center;font-size:12px;font
 
 
 .quotePage .wrap { position:absolute;width:620px;height:100%; }
-.quote {  width:100%;position:absolute;top:30%;text-shadow:0 0 2px #bbb;color:#2b2b2b;font:16px/2em "Microsoft YaHei",Helvetica,Arial,sans-serif; }
+.quote {  width:100%;position:absolute;top:30%;text-shadow:0 0 2px #bbb;color:#2b2b2b;font:16px/2em "Microsoft YaHei",Helvetica,Arial,sans-serif; 
+	-webkit-transition-property:opacity;
+	-webkit-transition-duration:500ms;
+}
 
 .quoteContent { margin:10px 0;text-indent:32px; }
 .author { position:relative;padding-right:40px;margin-top:20px;text-align:right; }
+
 
 .aboutPage .wrap { position:absolute;top:50%;margin-top:-300px;width:620px;height:600px;font:14px/2em "Microsoft YaHei",Helvetica,Arial,sans-serif;text-shadow:0 0 2px #bfbfbf;color:#2b2b2b; }
 .aboutPage .intro { width:600px;margin:0 auto; }

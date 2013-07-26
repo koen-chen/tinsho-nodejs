@@ -53,7 +53,7 @@ Admin.prototype = {
 			data: 'content=' + this.content.value + '&author=' + this.author.value,
 			callback: function(data){
 				var data = JSON.parse(data);
-				alert(data.message);
+				//alert(data.message);
 			}
 		});
 	},
