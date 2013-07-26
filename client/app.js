@@ -38,6 +38,7 @@ Tinsho.prototype = {
 
 	processQuote: function(data){
 		var resp = JSON.parse(data);
+		
 		this.skip = resp.skip;
 		this.quotes = resp.quotes;
 		this.updateQuote();
@@ -64,18 +65,27 @@ Tinsho.prototype = {
 			this.current = 0;
 			this.fetchQuote(this.skip);
 		}
+
 		this.quoteAuthor.innerHTML = q.author;
 		this.quoteContent.innerHTML = q.content;
 	},
 
 	shareQuote: function(){
-		window.open('http://v.t.sina.com.cn/share/share.php?title=' + $('#quoteContent').text() + '——' + $('#quoteAuthor').text() + ' ( 分享自听说网http://tinsho.com )','','fullscreen=no,width=600,height=100');
+		window.open('http://v.t.sina.com.cn/share/share.php?title=' + this.quoteContent.innerHTML + '——' + this.quoteAuthor.innerHTML + ' ( 分享自听说网http://tinsho.com )','','fullscreen=no,width=600,height=100');
+	},
+
+	bindBack: function(){
+		this.backBtn = document.querySelector('.backBtn');
+		this.backBtn.addEventListener('click', this.showQuotePage.bind(this), false);
 	},
 
 	showQuotePage: function(){
 		this.main.innerHTML = this.quotePage;
 		this.quoteAuthor = document.getElementById('quoteAuthor');
 		this.quoteContent = document.getElementById('quoteContent');
+		
+		this.shareBtn = document.querySelector('.shareBtn');
+		this.shareBtn.addEventListener('click', this.shareQuote.bind(this), false);
 
 		this.hearBtn = document.querySelector('.hearBtn');
 		this.hearBtn.addEventListener('click', this.updateQuote.bind(this), false);
@@ -83,14 +93,12 @@ Tinsho.prototype = {
 
 	showAboutPage: function(){
 		this.main.innerHTML = this.aboutPage;
-		this.backBtn = document.querySelector('.backBtn');
-		this.backBtn.addEventListener('click', this.showQuotePage.bind(this), false);
+		this.bindBack();
 	},
 
 	showMobilePage: function(){
 		this.main.innerHTML = this.mobilePage;
-		this.backBtn = document.querySelector('.backBtn');
-		this.backBtn.addEventListener('click', this.showQuotePage.bind(this), false);
+		this.bindBack();
 	}
 };
 
