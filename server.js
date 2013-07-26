@@ -20,7 +20,7 @@ MongoClient.connect('mongodb://127.0.0.1:'+ config.dbPort +'/' + config.dbName, 
 });
 
 function initSuper(db) {
-	db.collection('users').count({ role: 'super' }, function(err, count){
+	db.collection('users').count({ username: config.superUsername, role: 'super' }, function(err, count){
 		if (count == 0) {
 			var shaSum = crypto.createHash('sha256');
 			shaSum.update(config.superPassword);
