@@ -1,7 +1,9 @@
 module.exports = {
-	dbname: 'db name',
-	dbport: 'db port',
-	username: 'admin name',
-	password: 'admin password',
+	dbName: 'xxx',
+	dbPort: 'xxx',
+	adminUsername: 'xxx',
+	adminPassword: 'xxx',
+	superUsername: 'xxx',
+	superPassword: 'xxx',
 	role: 'super'
 };
