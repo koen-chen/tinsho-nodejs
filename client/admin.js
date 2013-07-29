@@ -39,7 +39,14 @@ Admin.prototype = {
 			data: 'username=' + this.username.value + '&password=' + this.password.value,
 			callback: function(data){
 				var data = JSON.parse(data);
-				data.auth ? this.showAddQuotePage() : this.showLoginPage();
+				if (data.auth) {
+					this.showAddQuotePage();
+				}
+				else {
+					this.showLoginPage();
+					this.tips.style.display = 'block';
+					this.tips.innerHTML = 'Login Failed';
+				}
 			}
 		});
 	},
@@ -53,8 +60,14 @@ Admin.prototype = {
 			data: 'content=' + this.content.value + '&author=' + this.author.value,
 			callback: function(data){
 				var data = JSON.parse(data);
-				//alert(data.message);
-			}
+				this.tips.style.display = 'block';
+				if (data.message) {
+					this.tips.innerHTML = 'Add Quote Successfully';
+				}
+				else {
+					this.tips.innerHTML = 'Add Quote Failed';
+				}
+			}.bind(this)
 		});
 	},
 	
@@ -63,6 +76,7 @@ Admin.prototype = {
 		this.loginForm = document.querySelector('form');
 		this.username = document.querySelector('input[name="username"]');
 		this.password = document.querySelector('input[name="password"]');
+		this.tips = document.querySelector('.tips');
 
 		this.loginForm.addEventListener('submit', this.login.bind(this), false);
 	},
@@ -72,6 +86,7 @@ Admin.prototype = {
 		this.addQuoteForm = document.querySelector('form');
 		this.content = document.querySelector('textarea[name="content"]');
 		this.author = document.querySelector('input[name="author"]');
+		this.tips = document.querySelector('.tips');
 
 		this.addQuoteForm.addEventListener('submit', this.addQuote.bind(this), false);
 	}
