@@ -62,6 +62,7 @@ button[type="button"] { display:block;cursor:pointer;text-indent:-9999px;backgro
 @media screen and (max-width:960px) {
 	.container, .sidebar, .main, .wrap, .quotePage { z-index:100;width:100%;height:100%;position:absolute;left:0;padding:0;margin:0; }
 	.quotePage { width:90%;left:5%; }
+	.quotePage .wrap { width:100%; }
 	.logo { top:15%; }
 	.main { z-index:101;background:none;top:0; }
 	.aboutBtn, .mobileBtn { display:none !important; }
