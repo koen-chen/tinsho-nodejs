@@ -50,7 +50,7 @@ var Router = {
 					reskip = parseInt(skip) + 1;
 				}
 
-				this.db.collection('quotes').find().skip(skip * 5).limit(5).sort('create_at':1).toArray(function(err, docs){
+				this.db.collection('quotes').find().skip(skip * 5).limit(5).toArray(function(err, docs){
 					var res = '{ "skip" : ' + reskip +', "quotes" : '+ JSON.stringify(docs) +'}';
 					this.response.write(res);
 					this.response.end();
