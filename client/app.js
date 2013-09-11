@@ -6,6 +6,11 @@ function Tinsho() {
 	this.isIE = !!document.attachEvent;
 	this.isOldBrowser = !Function.prototype.bind;
 
+	if (this.isOldBrowser) {
+		document.body.innerHTML = document.getElementById('browsers-tpl').innerHTML;
+		return;
+	}
+
 	this.current = 0;
 	this.quoteState = false;
 	this.locked = true;
