@@ -23,8 +23,10 @@ body { background:url(../images/bg.jpg) repeat center center;font-size:12px;font
 
 .quotePage .wrap { position:absolute;width:620px;height:100%; }
 .quote {  width:100%;position:absolute;top:30%;text-shadow:0 0 2px #bbb;color:#2b2b2b;font:16px/2em "Microsoft YaHei",Helvetica,Arial,sans-serif; 
-	-webkit-transition-property:opacity;
-	-webkit-transition-duration:500ms;
+	-webkit-transition: opacity 500ms ease;
+	-moz-transition: opacity 500ms ease;
+	-ms-transition: opacity 500ms ease;
+	transition: opacity 500ms ease;
 }
 
 .quoteContent { margin:10px 0;text-indent:32px; }
